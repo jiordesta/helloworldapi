@@ -30,7 +30,7 @@ export const signin = async (req, res) => {
     httpOnly: true,
     expires: new Date(Date.now() + oneDay),
     secure: false,
-    sameSite: "None",
+    sameSite: "Lax", //None for production Lax for development
   });
   res.status(StatusCodes.OK).json("");
 };
@@ -46,7 +46,7 @@ export const signout = async (req, res) => {
     httpOnly: true,
     expires: new Date(Date.now()),
     secure: false,
-    sameSite: "None",
+    sameSite: "Lax", //None for production Lax for development
   });
   res.status(StatusCodes.OK).json("Logged out");
 };
