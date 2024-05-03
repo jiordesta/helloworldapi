@@ -10,6 +10,8 @@ import { error_handler } from "./utilities/error_handler.js";
 import { cors_options } from "./configs/cors_options.js";
 
 import user_router from "./routers/user_router.js";
+import channel_router from "./routers/channel_router.js";
+import message_router from "./routers/message_router.js";
 
 ///configuration
 dotenv.config();
@@ -21,6 +23,8 @@ app.use(cors(cors_options));
 
 ///routers
 app.use("/user", user_router);
+app.use("/channel", channel_router);
+app.use("/message", message_router);
 
 //errors
 app.use(error_handler);
